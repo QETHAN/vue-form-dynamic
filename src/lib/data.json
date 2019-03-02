@@ -1,0 +1,132 @@
+{
+  "list": [
+    {
+      "type": "checkbox",
+      "name": "多选框组",
+      "icon": "icon-check-box",
+      "options": {
+        "inline": false,
+        "defaultValue": [],
+        "showLabel": false,
+        "options": [
+          {
+            "value": "选项1"
+          },
+          {
+            "value": "选项2"
+          },
+          {
+            "value": "选项3"
+          }
+        ],
+        "required": false,
+        "width": "",
+        "remote": false,
+        "remoteOptions": [],
+        "props": {
+          "value": "value",
+          "label": "label"
+        },
+        "remoteFunc": "func_1551508311000_29420"
+      },
+      "key": "1551508311000_29420",
+      "model": "checkbox_1551508311000_29420",
+      "rules": []
+    },
+    {
+      "type": "imgupload",
+      "name": "图片",
+      "icon": "icon-tupian",
+      "options": {
+        "defaultValue": [],
+        "size": {
+          "width": 100,
+          "height": 100
+        },
+        "width": "",
+        "tokenFunc": "funcGetToken",
+        "token": "odaWpqNvohuJr1UrGQgOixj4Kw05b1stVq2-YjKh:OeNPmxQoXv64uTvRooPh2eeG7_I=:eyJkZWxldGVBZnRlckRheXMiOjEsInJldHVybkJvZHkiOiJ7XCJrZXlcIjpcIiQoa2V5KVwiLFwiaGFzaFwiOlwiJChldGFnKVwiLFwiZnNpemVcIjokKGZzaXplKSxcImJ1Y2tldFwiOlwiJChidWNrZXQpXCIsXCJuYW1lXCI6XCIkKHg6bmFtZSlcIn0iLCJzY29wZSI6ImZvcm0tbWFraW5nIiwiZGVhZGxpbmUiOjE1NTE1MTIzMzh9",
+        "domain": "http://pfp81ptt6.bkt.clouddn.com/",
+        "disabled": false,
+        "length": 8,
+        "multiple": true,
+        "remoteFunc": "func_1551508319000_85992"
+      },
+      "key": "1551508319000_85992",
+      "model": "imgupload_1551508319000_85992",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "name": "单行文本",
+      "icon": "icon-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "remoteFunc": "func_1551508719000_22976"
+      },
+      "key": "1551508719000_22976",
+      "model": "input_1551508719000_22976",
+      "rules": [
+        {
+          "type": "string",
+          "message": "单行文本格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "date",
+      "name": "日期选择器",
+      "icon": "icon-date",
+      "options": {
+        "defaultValue": "",
+        "readonly": false,
+        "disabled": false,
+        "editable": true,
+        "clearable": true,
+        "placeholder": "",
+        "startPlaceholder": "",
+        "endPlaceholder": "",
+        "type": "date",
+        "format": "yyyy-MM-dd",
+        "timestamp": false,
+        "required": false,
+        "width": "",
+        "remoteFunc": "func_1551508814000_8271"
+      },
+      "key": "1551508814000_8271",
+      "model": "date_1551508814000_8271",
+      "rules": []
+    },
+    {
+      "type": "textarea",
+      "name": "多行文本",
+      "icon": "icon-diy-com-textarea",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": true,
+        "pattern": "",
+        "placeholder": "",
+        "remoteFunc": "func_1551508727000_56910"
+      },
+      "key": "1551508727000_56910",
+      "model": "textarea_1551508727000_56910",
+      "rules": [
+        {
+          "required": true,
+          "message": "多行文本必须填写"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "labelWidth": 100,
+    "labelPosition": "top",
+    "size": "small"
+  }
+}
