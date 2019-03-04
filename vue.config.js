@@ -1,9 +1,15 @@
 module.exports = {
   pages: {
     qingjia: {
-      entry: "src/views/qingjia/main.js",
+      entry: "src/views/shenpi/qingjia/main.js",
       template: "public/index.html",
       filename: "qingjia.html",
+      title: "请假"
+    },
+    shenpiDetail: {
+      entry: "src/views/shenpi/detail/main.js",
+      template: "public/index.html",
+      filename: "shenpiDetail.html",
       title: "请假"
     },
     newsDetail: {
@@ -25,13 +31,13 @@ module.exports = {
   },
 
   devServer: {
-    disableHostCheck: true
-    // proxy: {
-    //   // "/api": {
-    //   //   target: "http://ggpigapi.keputuo.com",
-    //   //   ws: true,
-    //   //   changeOrigin: true
-    //   // }
-    // }
+    disableHostCheck: true,
+    proxy: {
+      "/api": {
+        target: "http://joax.bxdins.cn",
+        ws: true,
+        changeOrigin: true
+      }
+    }
   }
 };
