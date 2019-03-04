@@ -6,7 +6,7 @@
         :key="item.key"
         :type="item.type"
         :name="item.name"
-        :mykey="item.key"
+        :mykey="item.model"
         :options="item.options"
         :formData="formData"
       >

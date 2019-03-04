@@ -1,0 +1,167 @@
+$remBase: 75;
+// $primaryColor: #ffd633;
+
+@function px2rem($px) {
+  @return ($px / $remBase) * 1rem;
+}
+
+%textOverflow {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%lineClamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin multiLinesOverflow($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// @include borderLine('top', color)
+@mixin borderLine($mode: 'top', $color: #e5e5e5) {
+  position: relative;
+  @if $mode == 'top' {
+    &::before {
+      // 实现1物理像素的下边框线
+      content: '';
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      background-color: $color;
+      height: 1px;
+      left: 0;
+      right: 0;
+      top: 0;
+      @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        -webkit-transform: scaleY(0.5);
+        -webkit-transform-origin: 50% 0%;
+      }
+    }
+  }
+  @if $mode == 'bottom' {
+    &::after {
+      // 实现1物理像素的下边框线
+      content: '';
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      background-color: $color;
+      height: 1px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        -webkit-transform: scaleY(0.5);
+        -webkit-transform-origin: 50% 0%;
+      }
+    }
+  }
+}
+
+@mixin borderRadius($radius) {
+  border-top-left-radius: px2rem($radius);
+  border-top-right-radius: px2rem($radius);
+  border-bottom-left-radius: px2rem($radius);
+  border-bottom-right-radius: px2rem($radius);
+}
+
+// @include banner(100)
+@mixin banner($height) {
+  position: relative;
+  padding-top: percentage($height/750); // 使用padding-top
+  height: 0;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 100);
+
+$sides: (top, bottom, left, right);
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{px2rem($space)} !important;
+    }
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{px2rem($space)} !important;
+    }
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+
+  [data-dpr="2"] & {
+      font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+      font-size: $font-size * 3;
+  }
+}
+
+/**
+ * Pure CSS carets mixin.
+ * http://css-tricks.com/snippets/css/css-triangle
+ */
+ @mixin caret($size: 3px, $color: #ccc, $direction: "down") {
+  width: 0;
+  height: 0;
+
+  @if $direction == "down" {
+
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+
+  } @else if $direction == "up" {
+
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+
+  } @else if $direction == "left" {
+
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right:$size solid $color;
+
+  } @else if $direction == "right" {
+
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+
+  }
+}
