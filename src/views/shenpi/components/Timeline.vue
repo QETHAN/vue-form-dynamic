@@ -62,6 +62,7 @@ export default {
 <style scoped lang="scss">
 .timeline {
   position: relative;
+  margin-top: px2rem(36);
   padding: 0 px2rem(30) 0 px2rem(44);
   .datetime {
     position: absolute;

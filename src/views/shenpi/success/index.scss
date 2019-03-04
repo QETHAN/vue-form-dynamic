@@ -1,0 +1,24 @@
+.submit-success {
+  min-height: 100%;
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: px2rem(276);
+    img {
+      margin-top: px2rem(52);
+      margin-bottom: px2rem(20);
+      width: px2rem(60);
+      height: px2rem(60);
+    }
+    .text1 {
+      color: #0F0808;
+      font-size: px2rem(34);
+    }
+    .text2 {
+      margin-top: px2rem(4);
+      color: #B4B4B4;
+      font-size: px2rem(28);
+    }
+  }
+}

@@ -12,6 +12,11 @@ module.exports = {
       filename: "shenpiDetail.html",
       title: "请假"
     },
+    submitSuccess: {
+      entry: "src/views/shenpi/success/main.js",
+      template: "public/index.html",
+      filename: "submitSuccess.html"
+    },
     newsDetail: {
       entry: "src/views/newsDetail/main.js",
       template: "public/index.html",

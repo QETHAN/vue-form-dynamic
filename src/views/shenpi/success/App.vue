@@ -1,24 +1,25 @@
 <template>
-  <div class="shenpi">
-    <Header />
-    <FormInfo class="m-t-30 m-b-90" />
+  <div class="submit-success">
+    <div class="header">
+      <img src="../img/success.png" />
+      <div class="text1">提交成功</div>
+      <div class="text2">已提交申请，等待审批</div>
+    </div>
+
     <Divider />
+
     <Timeline />
   </div>
 </template>
 
 <script>
-import Header from "../components/Header";
-import FormInfo from "../components/FormInfo";
 import Divider from "../components/Divider";
 import Timeline from "../components/Timeline";
 
 export default {
-  name: "ShenpiDetail",
+  name: "SubmitSuccess",
 
   components: {
-    Header,
-    FormInfo,
     Divider,
     Timeline
   }
