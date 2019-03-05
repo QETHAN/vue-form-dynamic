@@ -4,8 +4,8 @@ import { Toast } from "vant";
 import Axios from "axios";
 import { loadFromLocal } from "./utils";
 
-// Axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
-Axios.defaults.baseURL = "http://joax.bxdins.cn";
+Axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
+// Axios.defaults.baseURL = "";
 Axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 Axios.defaults.timeout = 30000;
 

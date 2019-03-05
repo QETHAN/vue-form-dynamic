@@ -22,6 +22,14 @@ export default {
   components: {
     Divider,
     Timeline
+  },
+
+  created() {
+    // this.$createDialog({
+    //   type: "alert",
+    //   title: "Alert",
+    //   content: "dialog content"
+    // }).show();
   }
 };
 </script>

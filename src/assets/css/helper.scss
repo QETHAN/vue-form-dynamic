@@ -166,7 +166,7 @@ $sides: (top, bottom, left, right);
   }
 }
 
-@mixin placeholder($color, $fontSize) {
+@mixin input-placeholder($color, $fontSize) {
   .input::-webkit-input-placeholder {
     color: $color;
     font-size: $fontSize;
@@ -178,5 +178,32 @@ $sides: (top, bottom, left, right);
   .input:-ms-input-placeholder {
     color: $color;
     font-size: $fontSize;
+  }
+}
+
+@mixin textarea-placeholder($color, $fontSize) {
+  textarea::-webkit-input-placeholder {
+    color: $color;
+    font-size: $fontSize;
+  }
+  
+  textarea:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+    font-size: $fontSize;  
+  }
+  
+  textarea::-moz-placeholder {  /* Firefox 19+ */
+    color: $color;
+    font-size: $fontSize;  
+  }
+  
+  textarea:-ms-input-placeholder {
+    color: $color;
+    font-size: $fontSize;  
+  }
+  
+  textarea::placeholder {
+    color: color;
+    font-size: $fontSize;  
   }
 }

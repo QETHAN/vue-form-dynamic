@@ -1,21 +1,26 @@
 <template>
-  <component
-    :is="comInput"
-    :type="type"
-    :name="name"
-    :options="options"
-    :mykey="mykey"
-    :formData="formData"
-  ></component>
+  <div>
+    <Divider />
+    <component
+      :is="comInput"
+      :type="type"
+      :name="name"
+      :options="options"
+      :mykey="mykey"
+      :formData="formData"
+    ></component>
+  </div>
 </template>
 
 <script>
+import Divider from "@/views/shenpi/components/Divider";
 import MyInput from "./MyInput";
 import MyTextarea from "./MyTextarea";
 import MyDate from "./MyDate";
 import MyCheckbox from "./MyCheckbox";
 
 const inputMap = {
+  Divider,
   MyInput,
   MyTextarea,
   MyDate,

@@ -1,9 +1,9 @@
 module.exports = {
   pages: {
-    qingjia: {
-      entry: "src/views/shenpi/qingjia/main.js",
+    shenpiStart: {
+      entry: "src/views/shenpi/start/main.js",
       template: "public/index.html",
-      filename: "qingjia.html",
+      filename: "shenpiStart.html",
       title: "请假"
     },
     shenpiDetail: {
@@ -45,7 +45,7 @@ module.exports = {
     disableHostCheck: true,
     proxy: {
       "/api": {
-        target: "http://joax.bxdins.cn",
+        target: "http://joax.bxdins.cn/",
         ws: true,
         changeOrigin: true
       }
