@@ -10,12 +10,18 @@ module.exports = {
       entry: "src/views/shenpi/detail/main.js",
       template: "public/index.html",
       filename: "shenpiDetail.html",
-      title: "请假"
+      title: "我的审批"
     },
     submitSuccess: {
       entry: "src/views/shenpi/success/main.js",
       template: "public/index.html",
       filename: "submitSuccess.html"
+    },
+    shenpiPending: {
+      entry: "src/views/shenpi/pending/main.js",
+      template: "public/index.html",
+      filename: "shenpiPending.html",
+      title: "我的审批"
     },
     newsDetail: {
       entry: "src/views/newsDetail/main.js",

@@ -29,7 +29,7 @@ $remBase: 75;
 }
 
 // @include borderLine('top', color)
-@mixin borderLine($mode: 'top', $color: #e5e5e5) {
+@mixin borderLine($mode: 'top', $color: rgba(151,151,151,0.25)) {
   position: relative;
   @if $mode == 'top' {
     &::before {
@@ -163,5 +163,20 @@ $sides: (top, bottom, left, right);
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
 
+  }
+}
+
+@mixin placeholder($color, $fontSize) {
+  .input::-webkit-input-placeholder {
+    color: $color;
+    font-size: $fontSize;
+  }
+  .input:-moz-placeholder {
+    color: $color;
+    font-size: $fontSize;
+  }
+  .input:-ms-input-placeholder {
+    color: $color;
+    font-size: $fontSize;
   }
 }

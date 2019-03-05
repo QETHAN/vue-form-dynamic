@@ -16,8 +16,10 @@
     </div>
 
     <div class="item">
-      <label>请假事由</label>
-      <div class="text">生病</div>
+      <label>请假事由假事由假事由</label>
+      <div class="text">
+        请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由请假事由
+      </div>
     </div>
   </div>
 </template>
@@ -33,18 +35,25 @@ export default {
   padding: 0 px2rem(30);
   .item {
     display: flex;
+    // justify-content: space-between;
     align-items: center;
     margin-bottom: px2rem(20);
     &:last-child {
       margin-bottom: 0;
     }
+    font-size: 0;
     label {
-      margin-right: px2rem(40);
+      display: block;
+      min-width: px2rem(130);
+
       line-height: px2rem(42);
       color: #929292;
       font-size: px2rem(30);
     }
     .text {
+      // flex-shrink: 1;
+      padding-left: px2rem(30);
+      text-align: left;
       line-height: px2rem(42);
       color: #1a1a1a;
       font-size: px2rem(30);
