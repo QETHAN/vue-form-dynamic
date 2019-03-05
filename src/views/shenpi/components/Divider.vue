@@ -10,7 +10,6 @@ export default {
 
 <style scoped lang="scss">
 .divider {
-  width: 100%;
   height: px2rem(30);
   background-color: #f9f8f8;
 }

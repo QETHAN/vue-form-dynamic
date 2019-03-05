@@ -34,9 +34,11 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `
-          @import "@/assets/css/helper.scss";
-        `
+        data: '\n          @import "@/assets/css/helper.scss";\n        '
+      },
+      stylus: {
+        'resolve url': true,
+        'import': []
       }
     }
   },
@@ -49,6 +51,13 @@ module.exports = {
         ws: true,
         changeOrigin: true
       }
+    }
+  },
+
+  pluginOptions: {
+    'cube-ui': {
+      postCompile: false,
+      theme: false
     }
   }
 };

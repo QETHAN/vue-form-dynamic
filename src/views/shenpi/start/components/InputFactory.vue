@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Divider />
+    <Divider class="row" />
     <component
       :is="comInput"
       :type="type"
@@ -18,13 +18,15 @@ import MyInput from "./MyInput";
 import MyTextarea from "./MyTextarea";
 import MyDate from "./MyDate";
 import MyCheckbox from "./MyCheckbox";
+import MyImgupload from "./MyImgupload";
 
 const inputMap = {
   Divider,
   MyInput,
   MyTextarea,
   MyDate,
-  MyCheckbox
+  MyCheckbox,
+  MyImgupload
 };
 
 export default {
@@ -67,4 +69,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.row {
+  margin: 0 px2rem(-30);
+}
+</style>
