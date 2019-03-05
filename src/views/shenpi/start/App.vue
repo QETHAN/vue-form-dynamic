@@ -84,8 +84,18 @@ export default {
       });
     },
 
+    submitFormData() {
+      this.post("/api/v1/approve/applies");
+    },
+
     handleSubmit() {
-      console.log("[formData]", this.formData);
+      const data = {
+        flow_id: "",
+        form_value: this.formData
+      };
+      console.log("[formData]", data).then(res => {
+        console.log(res);
+      });
     }
   },
 
