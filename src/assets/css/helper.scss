@@ -207,3 +207,11 @@ $sides: (top, bottom, left, right);
     font-size: $fontSize;  
   }
 }
+
+@mixin removeNumberSpin {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0;
+  }
+}

@@ -24,8 +24,8 @@
 import InputFactory from "./components/InputFactory";
 import { getUrlParam } from "@/lib/utils";
 
-const data = require("@/lib/data.json");
-console.log(data);
+// const data = require("@/lib/data.json");
+// console.log(data);
 
 export default {
   name: "oa-form",
@@ -44,18 +44,18 @@ export default {
     },
 
     token() {
-      return "Bearer eyJpdiI6IlBPTEZtZWNDV2F5WXhJTVZ1dVhPOWc9PSIsInZhbHVlIjoiV1ZJOFZmU3daelQ3emlQNGNrRXJ3dDdmSmZwWHNzMkhSV1dSRlJXMnZ4ZzdNZDJKcnNXMkc5aFlEYmtHSUdJZUtZamdUSkJFXC93Mm9YOWpKbzhDaEc3aWpsV29nS1ZndXVTWGE2VmZocnZZPSIsIm1hYyI6IjM3NjJhMGU1NjY1Y2EyOTFiMDBjZmJmMzQ5ODE4M2RkNjQ1NDdhODE5MzUxYjc2NDg0Y2IwYzY2MjlkMGI2YzIifQ==";
+      return "Bearer eyJpdiI6IkR4bXl2KzFuVGVpUmh1Ym9WV1pVblE9PSIsInZhbHVlIjoiTjBza3l2MTdUbDEzOEowM3VnajJiVVNsTStkUjdPbUVYUklmcit3clFwNzU2ckl6MFZtV0V6M0RxSU9KSUZLcW50OVFxYzhadWJsdUlVU2xlRnBpcXh6Mjh5NVJ4S2dSM0NDR3lSVUR1RTg9IiwibWFjIjoiODE0ZTZmNzNjZjFiNjBhNzEzNmQ3ZjFiMjg4YTY2ZWNmY2ZlNmE4ZDBlNWIzZDRlNGViOGYyMGUzYmUzNDI4OSJ9";
     }
   },
 
   data() {
     return {
-      // list: [],
-      formData: {}, // 表单数据对象
+      list: [],
+      formData: {} // 表单数据对象
 
-      list: data.list.map(item => {
-        return { ...item, type: "My" + this.capitalizeFirstLetter(item.type) };
-      })
+      // list: data.list.map(item => {
+      //   return { ...item, type: "My" + this.capitalizeFirstLetter(item.type) };
+      // })
 
       // formData: {}
     };
@@ -73,7 +73,11 @@ export default {
         { Authorization: this.token }
       ).then(res => {
         console.log(res, "[id]", this.id);
-        const pageData = res.data.data.find(item => item.id == this.id);
+        const pageData = res.data.data.find(item => {
+          console.log(item.id);
+          return item.id == this.id;
+        });
+        console.log("[pageData]", pageData);
         if (pageData) {
           const form_data = JSON.parse(pageData.form_data);
           this.list = form_data.list.map(item => {
@@ -93,22 +97,23 @@ export default {
 
     handleSubmit() {
       const data = {
-        flow_id: "",
+        flow_id: this.id,
         form_value: this.formData
       };
-      console.log("[formData]", data).then(res => {
+      console.log("[formData]", data);
+      this.post("/api/v1/approve/applies", data).then(res => {
         console.log(res);
       });
     }
   },
 
   created() {
-    // this.getData();
+    this.getData();
   }
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "./index.scss";
 .test {
   height: 100px;

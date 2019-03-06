@@ -1,9 +1,19 @@
 <template>
   <div class="my-select">
-    <label>{{ this.name }}</label>
+    <label
+      >><span v-if="options.required" class="required">*</span>{{ name }}</label
+    >
     <div class="right">
-      <span>请选择</span>
-      <img src="@/views/shenpi/img/arrow-right.png" />
+      <template v-if="!val">
+        <span>{{ options.placeholder || "请选择" }}</span>
+        <img class="img1" src="@/views/shenpi/img/arrow-right.png" />
+      </template>
+      <template v-else>
+        <span>{{ val }}</span>
+        <div class="del">
+          <img class="img2" src="../img/del.png" @click.stop="handleDel" />
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -23,6 +33,12 @@ export default {
     options: Object,
     mykey: String,
     formData: Object
+  },
+
+  data() {
+    return {
+      val: ""
+    };
   },
 
   created() {

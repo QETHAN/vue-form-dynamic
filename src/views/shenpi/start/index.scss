@@ -1,6 +1,7 @@
 .shenpi-start {
   min-height: 100%;
   // padding: 0 px2rem(30);
+  padding-bottom: px2rem(204);
   background-color: #f9f8f8;
   // background-color: red;
   .input-item {
@@ -11,8 +12,11 @@
     }
   }
   .action {
+    display: flex;
+    justify-content: center;
     position: fixed;
     left: 0;
+    right: 0;
     bottom: 0;
     padding: px2rem(52) px2rem(30);
   }
@@ -47,4 +51,23 @@
 
 }
 
+.required {
+  margin-right: px2rem(5);
+  color: red;
+}
 
+.cube-radio {
+  padding: 0;
+}
+
+.cube-radio-wrap {
+  font-size: px2rem(30) !important;
+}
+
+.cube-picker-confirm,
+.cube-radio-hollow.cube-radio_selected .cube-radio-ui:before {
+  color:#570CEC !important;
+}
+.cube-radio-hollow.cube-radio_selected .cube-radio-ui i:before {
+  background-color:#570CEC !important;
+}

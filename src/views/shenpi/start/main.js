@@ -3,11 +3,20 @@ import request from '@/lib/axios'; // eslint-disable-line
 import App from "./App.vue";
 import "@/assets/css/index.scss";
 // import { DatetimePicker } from "vant";
-import { Style, Picker, DatePicker, Toast, Dialog, Upload } from "cube-ui";
+import {
+  Style,
+  Picker,
+  DatePicker,
+  Toast,
+  Dialog,
+  Upload,
+  Radio
+} from "cube-ui";
 Vue.use(DatePicker)
   .use(Toast)
   .use(Dialog)
   .use(Upload)
+  .use(Radio)
   .use(Picker);
 
 Vue.config.productionTip = false;

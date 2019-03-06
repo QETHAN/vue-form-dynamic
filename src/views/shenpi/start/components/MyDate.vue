@@ -1,9 +1,19 @@
 <template>
   <div class="my-date" @click="showFormatPicker">
-    <label>{{ this.name }}</label>
+    <label
+      ><span v-if="options.required" class="required">*</span>{{ name }}</label
+    >
     <div class="right">
-      <span>请选择</span>
-      <img src="@/views/shenpi/img/arrow-right.png" />
+      <template v-if="!val">
+        <span>请选择</span>
+        <img class="img1" src="@/views/shenpi/img/arrow-right.png" />
+      </template>
+      <template v-else>
+        <span>{{ val }}</span>
+        <div class="del">
+          <img class="img2" src="../img/del.png" @click.stop="handleDel" />
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -20,7 +30,17 @@ export default {
     formData: Object
   },
 
+  data() {
+    return {
+      val: ""
+    };
+  },
+
   methods: {
+    handleDel() {
+      this.val = this.formData[this.mykey] = "";
+    },
+
     showFormatPicker() {
       if (!this.formatPicker) {
         this.formatPicker = this.$createDatePicker({
@@ -42,23 +62,11 @@ export default {
     },
 
     selectHandle(date, selectedVal, selectedText) {
-      this.formData[this.mykey] = selectedText.join(" ");
-      this.$createDialog({
-        type: "warn",
-        content: `Selected Item: <br/> - date: ${date} <br/> - value: ${selectedVal.join(
-          ", "
-        )} <br/> - text: ${selectedText.join(" ")}`,
-        icon: "cubeic-alert"
-      }).show();
+      // this.$set(`formData.${this.mykey}`, selectedText.join(" "));
+      this.val = this.formData[this.mykey] = selectedText.join(" ");
     },
 
-    cancelHandle() {
-      this.$createToast({
-        type: "correct",
-        txt: "Picker canceled",
-        time: 1000
-      }).show();
-    }
+    cancelHandle() {}
   }
 };
 </script>
@@ -73,14 +81,29 @@ export default {
   font-size: px2rem(34);
   background-color: white;
   .right {
+    display: flex;
+    align-items: center;
+    height: 100%;
     span {
-      margin-right: px2rem(30);
+      margin-right: px2rem(20);
       color: #b4b4b4;
       font-size: px2rem(30);
     }
-    img {
+    .img1 {
       width: px2rem(12);
       height: px2rem(20);
+    }
+    .del {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: px2rem(46);
+      height: 100%;
+      text-align: center;
+    }
+    .img2 {
+      width: px2rem(36);
+      height: px2rem(36);
     }
   }
 }

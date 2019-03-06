@@ -1,9 +1,10 @@
 <template>
-  <div class="my-input">
+  <div class="my-number">
     <div class="name">
-      <span v-if="options.required" class="required">*</span>{{ name }}
+      ><span v-if="options.required" class="required">*</span>{{ name }}
     </div>
     <input
+      type="number"
       v-model="formData[mykey]"
       :placeholder="options.placeholder || '请输入'"
     />
@@ -12,7 +13,7 @@
 
 <script>
 export default {
-  name: "MyInput",
+  name: "MyNumber",
 
   props: {
     type: String,
@@ -25,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.my-input {
+.my-number {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,5 +48,6 @@ export default {
     outline: none;
   }
   @include input-placeholder(#b4b4b4, px2rem(30));
+  @include removeNumberSpin;
 }
 </style>

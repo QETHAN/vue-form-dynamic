@@ -1,5 +1,5 @@
 <template>
-  <div class="my-checkbox">
+  <div class="my-radio">
     <div class="name">
       ><span v-if="options.required" class="required">*</span>{{ name }}
     </div>
@@ -7,13 +7,14 @@
       v-model="formData[mykey]"
       :options="options.options"
       position="right"
+      :hollow-style="true"
     />
   </div>
 </template>
 
 <script>
 export default {
-  name: "MyCheckbox",
+  name: "MyRadio",
 
   props: {
     type: String,
@@ -32,7 +33,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.my-checkbox {
+.my-radio {
   background: white;
   .name {
     margin-top: px2rem(12);

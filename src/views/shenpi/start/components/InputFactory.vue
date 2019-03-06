@@ -15,6 +15,8 @@
 <script>
 import Divider from "@/views/shenpi/components/Divider";
 import MyInput from "./MyInput";
+import MyNumber from "./MyNumber";
+import MyRadio from "./MyRadio";
 import MyTextarea from "./MyTextarea";
 import MyDate from "./MyDate";
 import MyCheckbox from "./MyCheckbox";
@@ -23,6 +25,8 @@ import MyImgupload from "./MyImgupload";
 const inputMap = {
   Divider,
   MyInput,
+  MyNumber,
+  MyRadio,
   MyTextarea,
   MyDate,
   MyCheckbox,
