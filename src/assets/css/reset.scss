@@ -70,7 +70,7 @@ h6 {
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video, input
 {
-  font-size: inherit;
+  // font-size: inherit;
 }
 /* *
  * 重置标签元素
@@ -239,15 +239,15 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
 /* 修改占位文字的默认样式 */
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #cccccc;
-}
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #cccccc;
-}
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #cccccc;
-}
+// input::-moz-placeholder,
+// textarea::-moz-placeholder {
+//   color: #cccccc;
+// }
+// input:-ms-input-placeholder,
+// textarea:-ms-input-placeholder {
+//   color: #cccccc;
+// }
+// input::-webkit-input-placeholder,
+// textarea::-webkit-input-placeholder {
+//   color: #cccccc;
+// }

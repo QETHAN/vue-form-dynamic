@@ -9,6 +9,7 @@
         :mykey="item.model"
         :options="item.options"
         :formData="formData"
+        class="input-item"
       >
       </InputFactory>
     </form>
@@ -25,6 +26,7 @@ import { getUrlParam } from "@/lib/utils";
 
 const data = require("@/lib/data.json");
 console.log(data);
+
 export default {
   name: "oa-form",
 
@@ -54,6 +56,7 @@ export default {
       list: data.list.map(item => {
         return { ...item, type: "My" + this.capitalizeFirstLetter(item.type) };
       })
+
       // formData: {}
     };
   },

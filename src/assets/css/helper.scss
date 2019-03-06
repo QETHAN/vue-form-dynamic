@@ -167,15 +167,15 @@ $sides: (top, bottom, left, right);
 }
 
 @mixin input-placeholder($color, $fontSize) {
-  .input::-webkit-input-placeholder {
+  input::-webkit-input-placeholder {
     color: $color;
     font-size: $fontSize;
   }
-  .input:-moz-placeholder {
+  input:-moz-placeholder {
     color: $color;
     font-size: $fontSize;
   }
-  .input:-ms-input-placeholder {
+  input:-ms-input-placeholder {
     color: $color;
     font-size: $fontSize;
   }

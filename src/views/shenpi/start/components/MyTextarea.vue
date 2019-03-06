@@ -4,7 +4,7 @@
     <textarea
       rows="4"
       v-model="formData[mykey]"
-      :placeholder="options.placeholder"
+      :placeholder="options.placeholder || '请输入'"
     ></textarea>
   </div>
 </template>
@@ -26,9 +26,8 @@ export default {
 <style scoped lang="scss">
 .my-textarea {
   height: px2rem(236);
-  background-color: white;
   .name {
-    // margin-top: px2rem(22);
+    margin-top: px2rem(12);
     line-height: px2rem(48);
     color: #0f0808;
     font-size: px2rem(34);
@@ -41,6 +40,7 @@ export default {
     font-size: px2rem(30);
     border: none;
     outline: none;
+    background-color: white;
   }
 }
 @include textarea-placeholder(#b4b4b4, px2rem(30));

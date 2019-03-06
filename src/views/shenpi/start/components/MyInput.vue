@@ -1,7 +1,10 @@
 <template>
   <div class="my-input">
     <div class="name">{{ this.name }}</div>
-    <input v-model="formData[mykey]" :placeholder="options.placeholder" />
+    <input
+      v-model="formData[mykey]"
+      :placeholder="options.placeholder || '请输入'"
+    />
   </div>
 </template>
 
@@ -41,6 +44,6 @@ export default {
     border: none;
     outline: none;
   }
+  @include input-placeholder(#b4b4b4, px2rem(30));
 }
-@include input-placeholder(#b4b4b4, px2rem(30));
 </style>

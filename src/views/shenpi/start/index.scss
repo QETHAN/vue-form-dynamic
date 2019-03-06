@@ -1,9 +1,15 @@
 .shenpi-start {
   min-height: 100%;
-  padding: 0 px2rem(30);
+  // padding: 0 px2rem(30);
   background-color: #f9f8f8;
   // background-color: red;
-
+  .input-item {
+    padding: 0 px2rem(30);
+    background: white;
+    &-divider {
+      margin: 0 px2rem(-30);
+    }
+  }
   .action {
     position: fixed;
     left: 0;
@@ -38,4 +44,7 @@
     border-radius: px2rem(50);
     box-shadow: 0 2px 11px 0 rgba(155,126,211,0.50);
   }
+
 }
+
+

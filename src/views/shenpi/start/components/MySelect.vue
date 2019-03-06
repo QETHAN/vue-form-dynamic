@@ -9,6 +9,11 @@
 </template>
 
 <script>
+const column1 = [
+  { text: "剧毒", value: "剧毒" },
+  { text: "蚂蚁", value: "蚂蚁" },
+  { text: "幽鬼", value: "幽鬼" }
+];
 export default {
   name: "MySelect",
 
@@ -18,6 +23,17 @@ export default {
     options: Object,
     mykey: String,
     formData: Object
+  },
+
+  created() {
+    this.picker = this.$createPicker({
+      title: "",
+      data: [column1],
+      onSelect: this.selectHandle,
+      onCancel: this.cancelHandle
+    });
+
+    this.picker.show();
   }
 };
 </script>
